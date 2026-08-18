@@ -1,0 +1,50 @@
+site_name: windysama 的文档站
+site_description: 个人技术文档与笔记
+site_author: windysama
+repo_url: https://github.com/windysama/mydocs
+repo_name: windysama/mydocs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切换至暗色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至亮色
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - 首页: index.md
+  - 技术笔记:
+      - RDMA 驱动验证笔记: rdma-notes.md
+  - 关于: about.md
