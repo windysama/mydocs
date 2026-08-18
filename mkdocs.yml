@@ -1,50 +1,92 @@
 site_name: windysama 的文档站
-site_description: 个人技术文档与笔记
+site_description: 个人技术文档与笔记 —— Linux 内核 RDMA 网卡驱动、固件验证与调试
 site_author: windysama
+site_url: https://windysama.github.io/mydocs/
 repo_url: https://github.com/windysama/mydocs
 repo_name: windysama/mydocs
 edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 windysama — <a href="https://github.com/windysama/mydocs">GitHub</a>
 
 theme:
   name: material
   language: zh
+  icon:
+    logo: material/server-network
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: 切换至暗色
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: 切换至亮色
+  font: false
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
     - navigation.top
+    - navigation.footer
+    - header.autohide
+    - toc.follow
     - content.code.copy
+    - content.tooltips
     - search.suggest
     - search.highlight
 
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/windysama
+
 markdown_extensions:
   - admonition
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.details
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
+      permalink_title: 永久链接
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 plugins:
   - search
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
 
 nav:
   - 首页: index.md
   - 技术笔记:
       - RDMA 驱动验证笔记: rdma-notes.md
+      - sonic-gns3虚拟环境搭建: Sonic-GNS3虚拟环境搭建.md
+  - 标签: tags.md
   - 关于: about.md
