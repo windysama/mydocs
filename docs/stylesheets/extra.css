@@ -1,0 +1,128 @@
+/*
+ * 自定义样式：品牌色、中文字体、首页 Hero / 统计条 / 特性卡片
+ */
+
+/* ---------- 品牌色（深蓝 + 青，RDMA / 内核科技风） ---------- */
+:root {
+  --md-primary-fg-color:        #0d2b45;
+  --md-primary-fg-color--light: #2f5a86;
+  --md-primary-fg-color--dark:  #06182b;
+  --md-accent-fg-color:         #00b8d4;
+}
+
+/* 暗色主题下的微调 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #0a1f35;
+  --md-primary-fg-color--light: #2f5a86;
+  --md-primary-fg-color--dark:  #051220;
+  --md-accent-fg-color:         #00c9e6;
+}
+
+/* ---------- 中文字体（theme.font: false 后由这里接管） ---------- */
+:root {
+  --md-text-font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC",
+                         "Source Han Sans SC", system-ui, -apple-system,
+                         "Segoe UI", sans-serif;
+  --md-code-font-family: "JetBrains Mono", "Cascadia Code", "SFMono-Regular",
+                         Consolas, "Courier New", monospace;
+  /* 兼容不同版本 Material 的变量名 */
+  --md-text-font: var(--md-text-font-family);
+  --md-code-font: var(--md-code-font-family);
+}
+
+body,
+.md-header,
+.md-footer,
+.md-typeset {
+  font-family: var(--md-text-font-family);
+}
+
+/* ---------- 首页 Hero ---------- */
+.mdx-hero {
+  margin: 0 -.8rem;
+  padding: 2.2rem 1.6rem 2.6rem;
+  border-radius: .8rem;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(0, 184, 212, .18), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(45, 106, 167, .25), transparent 60%),
+    linear-gradient(180deg, rgba(13, 43, 69, .06), rgba(13, 43, 69, 0));
+  border: 1px solid rgba(127, 165, 201, .25);
+}
+
+[data-md-color-scheme="slate"] .mdx-hero {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(0, 184, 212, .15), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(45, 106, 167, .2), transparent 60%),
+    linear-gradient(180deg, rgba(10, 31, 53, .6), rgba(10, 31, 53, 0));
+}
+
+.mdx-hero h1 {
+  margin: 0 0 1rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.mdx-hero__content p {
+  max-width: 42rem;
+  font-size: 1.05rem;
+  opacity: .85;
+}
+
+.mdx-hero .md-button {
+  margin: .5rem .6rem .5rem 0;
+}
+
+/* ---------- 首页统计条 ---------- */
+.mdx-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .8rem;
+  margin: 1.6rem 0;
+}
+
+.mdx-stat {
+  text-align: center;
+  padding: 1rem .5rem;
+  border-radius: .6rem;
+  border: 1px solid rgba(127, 165, 201, .28);
+  background: rgba(127, 165, 201, .06);
+}
+
+.mdx-stat__num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
+}
+
+.mdx-stat__label {
+  display: block;
+  margin-top: .25rem;
+  font-size: .8rem;
+  opacity: .8;
+}
+
+@media screen and (max-width: 60rem) {
+  .mdx-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- 首页特性卡片（.grid.cards 微调） ---------- */
+.grid.cards > ul > li {
+  border-radius: .6rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+}
+
+[data-md-color-scheme="slate"] .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
+}
+
+/* 卡片内的大图标 */
+.lg.middle {
+  font-size: 1.4rem;
+}
