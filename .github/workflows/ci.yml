@@ -2,10 +2,27 @@ name: deploy
 on:
   push:
     branches: [master, main]
+  pull_request:
+    branches: [master, main]
 permissions:
   contents: write
 jobs:
+  # 门禁：图片引用完整性 + 敏感信息扫描。不通过则不部署。
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: 校验图片与链接引用（防止线上图片 404）
+        run: python scripts/check_assets.py
+      - name: 敏感信息扫描（内网 IP 仅告警，密钥/口令则拦截）
+        run: python scripts/scan_secrets.py --allow-medium
+
   deploy:
+    needs: check
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
