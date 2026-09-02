@@ -294,7 +294,6 @@ http://172.17.105.195:3080/
 ```
 
 ![image-20260818112451760](Sonic-GNS3%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.assets/image-20260818112451760.png)
-![[附件/Pasted image 20260818112527.png]]
 
 
 
