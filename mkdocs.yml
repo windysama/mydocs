@@ -87,6 +87,6 @@ nav:
   - 首页: index.md
   - 技术笔记:
       - RDMA 驱动验证笔记: rdma-notes.md
-      - sonic-gns3虚拟环境搭建: Sonic-GNS3虚拟环境搭建.md
+      - sonic-gns3虚拟环境搭建: 06-Sonic-GNS3虚拟环境搭建.md
   - 标签: tags.md
   - 关于: about.md

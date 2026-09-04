@@ -1,4 +1,4 @@
-﻿# Sonic-GNS3 虚拟环境搭建
+# Sonic-GNS3 虚拟环境搭建
 
 > 本文档覆盖 Ubuntu 和 CentOS 7 两种环境。Ubuntu 环境按官方文档走即可，CentOS 7 环境有较多专属踩坑点，请仔细阅读对应章节。
 
@@ -294,7 +294,6 @@ http://172.17.105.195:3080/
 ```
 
 ![image-20260818112451760](06-Sonic-GNS3%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.assets/image-20260818112451760.png)
-![[附件/Pasted image 20260818112527.png]]
 
 
 
